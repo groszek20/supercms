@@ -165,7 +165,7 @@ class DatabaseManager {
 
         $result = $conn->query($SQL);
         if (!($result)) {
-            echo "Wstawienie nowego elementu nie powiodło się", __LINE__, " ", __FILE__;
+            echo "Wstawienie nowego elementu nie powiodło się ", __LINE__, " ", __FILE__;
         } else {
             return true;
         }

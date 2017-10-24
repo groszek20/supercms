@@ -1,0 +1,3 @@
+Options FollowSymlinks
+RewriteEngine On
+RewriteRule ^MainPage/([0-9a-zA-Z\-]+)/([0-9]+)/?$ modewrite1.php?page=main&app=$1&id=$2 [L]

@@ -117,7 +117,7 @@ class DatabaseManager {
         mysqli_close($conn);
     }
 
-    static public function deleteFrom($TABLE, $WHERE = Array(), $OPER = "AMD") {
+    static public function deleteFrom($TABLE, $WHERE = Array(), $OPER = "AND") {
         $conn = self::getConnection();
         $SQL = "DELETE FROM {$TABLE}";
 

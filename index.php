@@ -5,7 +5,7 @@
 
 <?php
 require_once ("config.php");
-include ("DatabaseManager.php");
+//include ("DatabaseManager.class.php");
 
 echo "<pre>";
 //print_r(DatabaseManager::getConnection());

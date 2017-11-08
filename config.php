@@ -1,5 +1,14 @@
 <?php
 
+ob_start();
+$AbsoluteURL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https://' : 'http//';
+$dirCat = dirname($_SERVER['PHP_SELF']);
+$AbsoluteURL .= $_SERVER['HTTP_HOST'];
+$AbsoluteURL .= $dirCat != '\\' ? $dirCat : "";
+$slash = substr($AbsoluteURL, -1);
+
+$NewURL = $slash != '/' ? $AbsoluteURL.'/' : $AbsoluteURL;
+
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'root');
 define('DB_PW', '');

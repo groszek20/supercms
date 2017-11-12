@@ -5,17 +5,27 @@ class ModuleLoader {
     static public function load($MODULE) {
         switch ($MODULE) {
             case "LoginForm":
+
+                if (isset($_SESSION['login'])) {
+                    $title = $_SESSION['login'];
+                } else {
+                    $title = "Panel Logowania";
+                }
+
                 echo ' 
                     <div id="login-form">
                         <input type="text" name="login" id="login-input" value="Nazwa użytkownika" />
                         <input type="password" name="password" id="password-input" value="Hasło" />
                         <input type="button" name="login-submit" id="login-submit" value="OK" />
                         <span class="options"><a href="#">Nowe konto</a> | <a href="#">Zapomniane hasło ?</a></span>
+                        <span class="title">'.$title.'</span>
                     </div>
                     ';
                 break;
 
             case "Menu":
+
+                $logout_btn = (isset($_SESSION['logged'])) ? "<li><a href=\"kontakt.html\">Wyloguj</a></li>" : "";
                 echo '                    
                     <div class="content">       
                     <h1><a href="/">Design klasy biznes</a></h1>        
@@ -24,6 +34,7 @@ class ModuleLoader {
                                   <li><a href="produkty.html">Usługi i ceny</a></li>
                                	  <li><a href="artykuly.html">Artykuły</a></li>
                                	  <li><a href="kontakt.html">Kontakt</a></li>
+                                  '.$logout_btn.'
                               </ul>
              	    </div>
                     ';
@@ -129,7 +140,7 @@ class ModuleLoader {
                     </div>
                 ';
                 break;
-            
+
             default;
                 break;
         }

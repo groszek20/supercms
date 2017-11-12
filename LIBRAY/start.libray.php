@@ -5,7 +5,9 @@ echo<<<PL
 <body>
 PL;
 
-AddonLoader::load("LoginSlider");
+if(isset($_SESSION['logged'])!==TRUE){
+    AddonLoader::load("LoginSlider");
+}
 
 echo<<<PL
 <div id="header">
@@ -26,6 +28,22 @@ PL;
 
 ModuleLoader::load("BoxWstep");
 ModuleLoader::load("BoxFirma");
+
+echo '</div>';
+
 ModuleLoader::load("BoxRight");
+
+echo<<<PL
+        </div>
+    </div>
+    
+PL;
 ModuleLoader::load("Footer");
+
+echo<<<PL
+     
+</body>
+</html>
+
+PL;
 ?>

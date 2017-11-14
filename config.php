@@ -1,7 +1,7 @@
 <?php
-
 ob_start();
-$AbsoluteURL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https://' : 'http//';
+
+$AbsoluteURL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https://' : 'http://';
 $dirCat = dirname($_SERVER['PHP_SELF']);
 $AbsoluteURL .= $_SERVER['HTTP_HOST'];
 $AbsoluteURL .= $dirCat != '\\' ? $dirCat : "";
@@ -14,14 +14,18 @@ define('DB_USERNAME', 'root');
 define('DB_PW', '');
 define('DB_DB', 'supercms');
 
-define('SERVER_ADDRESS',$NewURL);
+define('SERVER_ADDRESS', $NewURL);
 
-define('LogFolder', 'LOG'.DS, true);
+define('LogFolder', 'LOG', true);
 
-set_include_path(get_include_path().PATH_SEPARATOR."CLASS");
-set_include_path(get_include_path().PATH_SEPARATOR."CLASS/Managers");
-set_include_path(get_include_path().PATH_SEPARATOR."LIBRAY");
+set_include_path(get_include_path(). PATH_SEPARATOR . "CLASS");
+set_include_path(get_include_path(). PATH_SEPARATOR . "CLASS/Managers");
+set_include_path(get_include_path(). PATH_SEPARATOR . "LIBRAY");
 
-function __autoload($className){
-    @include_once ($className.".class.php");
+function __autoload($className) {
+    
+    @include_once($className.".class.php");
+    
 }
+
+?>

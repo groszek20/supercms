@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * @author Mateusz Manaj
+ * @company Eduweb.pl™ 2011 ©
+ * @email mateusz@eduweb.pl
+ * --------------------------------------------------
+ * All rights reserved! | Wszystkie Prawa Zastrzeżone!
+ *
+ */
+
 $meta = new MetaTags($_GET['page'], FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, 
                      FALSE, FALSE, FALSE, FALSE, FALSE, "screen", "icon", 
                      "jQuery,script,jquery.localscroll-1.2.5,coda-slider,jquery.scrollTo-1.3.3,jquery.serialScroll-1.2.1");
